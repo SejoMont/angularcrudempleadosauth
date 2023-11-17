@@ -1,0 +1,32 @@
+<div style="width: 80%; margin: 0 auto;">
+    <h1>Empleados</h1>
+    <form #insertForm="ngForm">
+        <label>Usuario</label>
+        <input type="text" class="form-control" #cajauser name="cajauser">
+        <label>Contraseña</label>
+        <input type="text" class="form-control" #cajapwd name="cajapwd">
+        <br>
+        <div class="text-end">
+            <button class="btn btn-outline-success" (click)="Login()">
+                Login
+            </button>
+        </div>
+        <br>
+        <table *ngIf="empleados" class="table table-striped text-center" style="width: 90%;margin: 0 auto;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Apellido</th>
+                    <th>Oficio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empleado of empleados">
+                    <td>{{empleado.idEmpleado}}</td>
+                    <td>{{empleado.apellido}}</td>
+                    <td>{{empleado.oficio}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
